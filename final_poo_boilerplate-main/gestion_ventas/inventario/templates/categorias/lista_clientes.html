@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Clientes</title>
+</head>
+<body>
+    <h1>Lista de Clientes</h1>
+    <ul>
+        {% for cliente in clientes %}
+            <li>
+                {{ cliente.nombre }} - {{ cliente.correo }} - {{ cliente.telefono }} - {{ cliente.direccion }}
+                <a href="{% url 'editar_cliente' cliente.id %}">Editar</a>
+                <a href="{% url 'eliminar_cliente' cliente.id %}" onclick="return confirm('¿Estás seguro de que quieres eliminar este cliente?');">Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'agregar_cliente' %}">Agregar Nuevo Cliente</a>
+    <a href="{% url 'pagina_principal' %}">Volver a la Página Principal</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Categorías</title>
+</head>
+<body>
+    <h1>Lista de Categorías</h1>
+    <ul>
+        {% for categoria in categorias %}
+            <li>
+                {{ categoria.nombre }} - {{ categoria.descripcion }}
+                <a href="{% url 'editar_categoria' categoria.id %}">Editar</a>
+                <a href="{% url 'eliminar_categoria' categoria.id %}" onclick="return confirm('¿Estás seguro de que quieres eliminar esta categoría?');">Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'agregar_categoria' %}">Agregar Nueva Categoría</a>
+    <a href="{% url 'pagina_principal' %}">Volver a la Página Principal</a>
+</body>
+</html>

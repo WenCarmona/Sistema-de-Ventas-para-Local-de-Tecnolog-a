@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Proveedor</title>
+</head>
+<body>
+    <h1>{% if form.instance.pk %}Editar{% else %}Agregar{% endif %} Proveedor</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+    <a href="{% url 'lista_proveedores' %}">Volver a la Lista</a>
+    <a href="{% url 'pagina_principal' %}">Volver a la Página Principal</a>
+</body>
+</html>

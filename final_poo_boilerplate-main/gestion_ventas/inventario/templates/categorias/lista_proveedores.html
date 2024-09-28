@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Proveedores</title>
+</head>
+<body>
+    <h1>Lista de Proveedores</h1>
+    <ul>
+        {% for proveedor in proveedores %}
+            <li>
+                {{ proveedor.nombre }} - {{ proveedor.contacto }} - {{ proveedor.direccion }}
+                <a href="{% url 'editar_proveedor' proveedor.id %}">Editar</a>
+                <a href="{% url 'eliminar_proveedor' proveedor.id %}" onclick="return confirm('¿Estás seguro de que quieres eliminar este proveedor?');">Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'agregar_proveedor' %}">Agregar Nuevo Proveedor</a>
+    <a href="{% url 'pagina_principal' %}">Volver a la Página Principal</a>
+</body>
+</html>

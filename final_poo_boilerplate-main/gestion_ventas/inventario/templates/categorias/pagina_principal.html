@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Página Principal</title>
+</head>
+<body>
+    <h1>Bienvenido a Gestión de Ventas</h1>
+    <h2>Contenido Principal</h2>
+    <nav>
+        <ul>
+            <li><a href="{% url 'lista_categorias' %}">Categorías</a></li>
+            <li><a href="{% url 'lista_proveedores' %}">Proveedores</a></li>
+            <li><a href="{% url 'lista_productos' %}">Productos</a></li>
+            <li><a href="{% url 'lista_clientes' %}">Clientes</a></li>
+            <li><a href="{% url 'lista_ventas' %}">Ventas</a></li>
+        </ul>
+    </nav>
+    <main>
+        <p>Esta es la página principal de mi aplicación de gestión de ventas.</p>
+    </main>
+</body>
+</html>
